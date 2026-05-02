@@ -60,7 +60,6 @@
                 <h2>📩 Chat With HR Now on WhatsApp</h2>
                 <p>Click below to talk directly with our HR team. Get started TODAY.</p>
                 
-                <!-- 双号码轮询 + 自动欢迎语按钮 -->
                 <button onclick="openWhatsApp()" class="whatsapp-btn">
                     CHAT WITH HR ON WHATSAPP
                 </button>
@@ -81,23 +80,18 @@
         </div>
     </div>
 
-    <!-- 双号轮询核心代码 -->
     <script>
-        // 你的两个WhatsApp号码
+        // 两个轮询号码
         const numbers = ["13503558513", "17208319528"];
-        // 自动欢迎语
-        const message = "Hi! Thanks for reaching out 😊%0A%0AWe have 2 options:%0A1) MAKE bracelets & EARN $100–$200/day (part-time, US only)%0A2) BUY handmade charity bracelets (100% profit to charity)%0A%0AWhich one are you interested in?";
+        // 你要的问候语（已修改）
+        const message = "你好我想要了解如何制作手工手串并获得报酬";
         
         let currentIndex = 0;
 
         function openWhatsApp() {
-            // 轮询获取当前号码
             const selectedNumber = numbers[currentIndex];
-            // 拼接跳转链接
-            const waLink = `https://wa.me/${selectedNumber}?text=${message}`;
-            // 切换到下一个号码
+            const waLink = `https://wa.me/${selectedNumber}?text=${encodeURIComponent(message)}`;
             currentIndex = (currentIndex + 1) % numbers.length;
-            // 新窗口打开
             window.open(waLink, "_blank");
         }
     </script>
