@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handmade Bracelets | Earn $100-$200/Day | Help Charity</title>
     
-    <!-- ========== 你的 FB Meta Pixel 代码已嵌入 ========== -->
+    <!-- ========== FB Meta Pixel 代码（精准匹配截图格式） ========== -->
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -18,6 +18,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '867536633024993');
     fbq('track', 'PageView');
+    fbq('track', 'Contact'); <!-- 对应截图里AddToCart的位置，已添加 -->
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=867536633024993&ev=PageView&noscript=1"
@@ -30,7 +31,7 @@
         body{background:#f8f9fa;color:#222;line-height:1.6}
         .container{max-width:700px;margin:30px auto;padding:20px}
         .card{background:white;padding:30px;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:20px}
-        h1{color:#1a1a1a;text-align:center;font-size:26px;margin-bottom:10px}
+        h1{color:#1a1a1a;text-align:center;font-size:26px;margin:10px 0}
         h2{color:#2c3e50;font-size:20px;margin:16px 0 10px}
         .tagline{text-align:center;color:#555;font-size:16px;margin-bottom:20px}
         .highlight{color:#d4a017;font-weight:bold}
@@ -114,11 +115,6 @@
             const waLink = `https://wa.me/${selectedNumber}?text=${encodeURIComponent(message)}`;
             currentIndex = (currentIndex + 1) % numbers.length;
             window.open(waLink, "_blank");
-            
-            // FB 追踪点击转化（额外优化）
-            if(typeof fbq === 'function') {
-                fbq('track', 'Contact');
-            }
         }
     </script>
 </body>
